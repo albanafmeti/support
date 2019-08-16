@@ -1,0 +1,25 @@
+{
+	"name": "noisim/support",
+	"description": "A package which will contain all the support stuff for PHP projects.",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Alban Afmeti",
+			"email": "albanafmeti@gmail.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"autoload": {
+		"psr-4": {
+			"": "src"
+		},
+		"files": [
+			"src/helpers.php"
+		]
+	},
+	"require": {
+		"laravel/lumen-framework": "5.8.*",
+		"illuminate/support": "5.8.*",
+		"zjango/curl": "dev-master"
+	}
+}
