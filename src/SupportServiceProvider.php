@@ -3,6 +3,7 @@
 namespace Noisim\Support;
 
 use Illuminate\Support\ServiceProvider;
+use Softmogul\Support\Commands\ValidatorMakeCommand;
 
 class SupportServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,12 @@ class SupportServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ValidatorMakeCommand::class,
+            ]);
+        }
+        
         $this->mergeConfigFrom(__DIR__ . '/config/support.php', 'support');
     }
 
